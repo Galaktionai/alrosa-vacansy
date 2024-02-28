@@ -1,0 +1,1095 @@
+@import url(../css/fonts.css);
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container_vacancy{
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.breadcrums{
+  margin-bottom: 24px;
+}
+
+.vacancy{
+  margin: 64px 0;
+}
+
+.vacancy__grid{
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  column-gap: 24px;
+}
+
+.breadcrum-a:not(:last-child):before {
+  content: '';
+  background: url(../img/arrow.svg);
+  width: 16px;
+  height: 16px;
+  color: inherit;
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  right: -24px;
+}
+
+.breadcrum-a:not(:last-child) {
+  position: relative;
+  margin-right: 32px;
+}
+
+.breadcrum-a:first-child:not(:last-child) {
+  color: #212529;
+}
+
+.breadcrum-a {
+  color: #97999B;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 20px;
+}
+
+body {
+  background: #fff;
+  color: #000;
+  font-family: Avenir Next Cyr;
+  font-size: 18px;
+  font-weight: 400;
+  height: 100%;
+  line-height: 1.5;
+  position: relative;
+  text-rendering: geometricPrecision;
+  min-width: 100%;
+}
+
+.title-new h2{
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 56px;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+
+.vacancy__filter-title{
+  font-weight: 450;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.vacancy__list-title{
+  font-weight: 450;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  display: block;
+}
+
+.vacancy__filter__checkbox{
+  display: grid;
+  gap: 16px;
+}
+
+.vacancy__filter__checkbox label{
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.vacancy__filter__checkbox label input{
+  width: 24px;
+  height: 24px;
+  display: block;
+  border: 1px solid #97999B;
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: all 0.1s;
+  position: relative;
+}
+
+.vacancy__filter__checkbox label input:checked{
+  background-color: #6DCDF6;
+  border: 0;
+  content: '✓';
+  color: #fff;
+  font-size: 16px;
+}
+
+.vacancy__filter__checkbox label input:after {
+  content: "";
+  width: 6px;
+  height: 12px;
+  position: absolute;
+  top: 3px;
+  left: 8px;
+  display: block;
+  border: 1px solid #fff;
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(45deg);
+}
+
+.vacancy__list__items{
+  margin-top: 32px;
+  display: grid;
+  gap: 16px;
+}
+
+.vacancy__item{
+  border-left: 5px solid rgb(237, 28, 36);
+  box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.05);
+  padding: 24px;
+  position: relative;
+  color: #212529;
+  text-decoration: none;
+  background: white;
+}
+
+.vacancy__item:hover .vacancy__item__arrow{
+  right: -4px;
+}
+
+.vacancy__item__arrow{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 29px;
+  height: 29px;
+  border: 3px solid #212529;
+  margin: 24px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.vacancy__item__arrow::after{
+  content: '';
+  border-left: 3px solid #212529;
+  border-top: 3px solid #212529;
+  width: 6px;
+  height: 6px;
+  display: block;
+  transform: rotate(135deg);
+  right: 1px;
+  position: relative;
+}
+
+.vacancy__item__name{
+  font-weight: 450;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 24px;
+  display: block;
+  width: 90%;
+}
+
+.vacancy__item__top{
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 16px;
+}
+
+.vacancy__item__bottom{
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.vacancy__list__pagination{
+  margin-top: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vacancy__list__pagination__wrap{
+  display: flex;
+  gap: 16px;
+}
+
+.vacancy__list__pagination-left img{
+  transform: rotate(180deg);
+  width: 24px;
+  height: 24px;
+}
+
+.vacancy__list__pagination-arrow{
+  transition: all 0.3s;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vacancy__list__pagination-arrow:hover{
+  opacity: 0.5;
+}
+
+.vacancy__list__pagination-right img{
+  width: 24px;
+  height: 24px;
+}
+
+.vacancy__list__pagination-number{
+  text-decoration: none;
+  color: #97999B;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.vacancy__list__pagination-number:hover{
+  color: #212529;
+  font-weight: 700;
+}
+
+.vacancy__list__pagination-number.active{
+  color: #212529;
+  font-weight: 700;
+}
+
+.vacancy__filter__select{
+  margin-bottom: 32px;
+  display: block;
+  height: auto;
+}
+
+.vacancy__filter-select{
+  width: 100%;
+  border: 1px solid #97999B;
+  border-radius: 0;
+  float: unset;
+  padding: 0 16px;
+}
+
+.vacancy__filter-select.open{
+  border: 1px solid #6DCDF6;
+}
+
+.vacancy__filter-select .list{
+  width: 100%;
+  border-radius: 0;
+  border: 0;
+  box-shadow: 0px 8px 16px 0px #0000001A;
+}
+
+.vacancy__filter-select .option{
+  position: relative;
+  padding: 0 16px;
+}
+
+.vacancy__filter-select .option.selected.focus::after{
+  content: "";
+  width: 4px;
+  height: 8px;
+  position: absolute;
+  right: 16px;
+  top: 14px;
+  display: block;
+  border: 1px solid #212529;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.nice-select.vacancy__filter-select::after{
+  border-bottom: 2px solid #212529;
+  border-right: 2px solid #212529;
+  height: 5px;
+  width: 5px;
+  right: 16px;
+}
+
+.vacancy__list__search{
+  position: relative;
+}
+
+.vacancy__list__search__wrap{
+  display: grid;
+  grid-template-columns: 1fr 24px;
+}
+
+.vacancy__list__search-input{
+  background: none;
+  border-bottom: 1px solid #97999B;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  padding-bottom: 14px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-family: 'Avenir Next Cyr';
+}
+
+.vacancy__list__search-input:focus{
+  outline: 0;
+}
+
+.vacancy__list__search-input::placeholder{
+  color: #97999B;
+}
+
+.vacancy__list__search-button{
+  background: url(../img/search.svg) no-repeat;
+  border-bottom: 1px solid #97999B;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+.vacancy__list__search__hint{
+  box-shadow: 0px 8px 16px 0px #0000001A;
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  z-index: 100;
+}
+
+.vacancy__list__search__hint ul{
+  padding: 8px 0;
+}
+
+.vacancy__list__search__hint ul li{
+  list-style-type: none;
+  font-size: 14px;
+  line-height: 20px;
+  color: #212529;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.vacancy__list__search__hint ul li:hover{
+  background-color: #F8F8F8;
+}
+
+.vacancy-detail{
+  margin: 64px 0;
+}
+
+.title-vacancy-detail h2{
+  font-size: 56px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+}
+
+.vacancy-detail__top{
+  display: grid;
+  grid-template-columns: 220px 1fr 88px;
+  margin-top: 24px;
+  margin-bottom: 64px;
+}
+
+.vacancy-detail__top-title{
+  color: #97999B;
+  font-size: 18px;
+  line-height: 24px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.vacancy-detail__top-title.right{
+  text-align: right;
+}
+
+.vacancy-detail__top-pre-title{
+  font-size: 18px;
+  font-weight: 450;
+  line-height: 24px;
+}
+
+.vacancy-detail__top-pre-title.ploxoy{
+  position: relative;
+  margin-right: 40px;
+}
+
+.vacancy-detail__top-pre-title.ploxoy:not(:last-child):before{
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #D7D7D7;
+  pointer-events: none;
+  position: absolute;
+  bottom: 5px;
+  right: -26px;
+  border-radius: 3px;
+}
+
+.vacancy-detail-requirements{
+  margin-bottom: 40px;
+  max-width: 647px;
+}
+
+.vacancy-detail-requirements-title{
+  display: block;
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 450;
+  margin-bottom: 24px;
+}
+
+.vacancy-detail-requirements p{
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 450;
+  margin-top: 16px;
+}
+
+.vacancy-detail-responsibilities{
+  max-width: 647px;
+  margin-bottom: 40px;
+}
+
+.vacancy-detail-responsibilities p{
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.brus-li{
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  margin-left: 54px;
+  list-style-type: none;
+  position: relative;
+}
+
+.brus-li::after{
+  content: '';
+  display: block;
+  width: 38px;
+  height: 2px;
+  background-color: #97999B;
+  position: absolute;
+  left: -54px;
+  top: 12px;
+}
+
+.vacancy-detail-form-title{
+  display: block;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 48px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #212529;
+}
+
+.detail-form__grid__wrap p, .detail-form__grid__wrap span{
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.detail-form__grid__wrap span{
+  margin-left: 4px;
+}
+
+.vacancy-detail-form-text{
+  color: #212529;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.vacancy-detail-form__grid{
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.detail-form__grid__wrap input{
+  width: 100%;
+  padding: 12px 16px;
+  font-family: Avenir Next Cyr;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  border: 1px solid #97999B;
+  margin-top: 4px;
+  transition: all 0.3s;
+}
+
+.detail-form__grid__wrap input:focus{
+  border: 1px solid #6DCDF6;
+  outline: 0;
+}
+
+.acancy-detail-form__grid__left{
+  display: grid;
+  gap: 24px;
+}
+
+.detail-form__grid__right{
+  display: grid;
+  gap: 24px;
+}
+
+.detail-form__grid__box p{
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.detail-form__grid__box textarea{
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  padding: 12px 16px;
+  margin-top: 4px;
+  resize: none;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #97999B;
+  font-family: Avenir Next Cyr;
+  height: 94.4%;
+}
+
+.detail-form__grid__box input{
+  height: 100%;
+  display: block;
+  width: 100%;
+  opacity: 0;
+  position: absolute;
+}
+
+.detail-form__grid__box label{
+  display: block;
+  width: 100%;
+  border: 1px dashed #97999B;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 4px;
+  height: 93.6%;
+}
+
+.vacancy-file-1{
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #212529;
+}
+
+.vacancy-file-2{
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #97999B;
+}
+
+.vacancy-detail-form__politika{
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  margin-top: 32px;
+  color: #212529;
+}
+
+.vacancy-detail-form__politika input{
+  height: 24px;
+  width: 24px;
+}
+
+.vacancy-detail-form__politika label {
+  line-height: 20px;
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 8px;
+  align-items: center;
+}
+
+.vacancy-detail-form__politika label input {
+  width: 24px;
+  height: 24px;
+  display: block;
+  border: 1px solid #97999B;
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: all 0.1s;
+  position: relative;
+}
+
+.vacancy-detail-form__politika label input:checked{
+  background-color: #6DCDF6;
+  border: 0;
+  content: '✓';
+  color: #fff;
+  font-size: 16px;
+}
+
+.vacancy-detail-form__politika label input:after {
+  content: "";
+  width: 6px;
+  height: 12px;
+  position: absolute;
+  top: 3px;
+  left: 8px;
+  display: block;
+  border: 1px solid #fff;
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(45deg);
+}
+
+.vacancy-detail-form__send{
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.vacancy-button{
+  background: #6DCDF6;
+  color: white;
+  padding: 10px 32px;
+  width: 264px;
+  border: 0;
+  border-radius: 24px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 450;
+  margin-right: 32px;
+  transition: all 0.3s;
+}
+
+.vacancy-button:hover{
+  background-color: #60bae1;
+}
+
+.vacancy-detail-form__send a{
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #212529;
+  text-decoration: none;
+  gap: 8px;
+  transition: all 0.3s;
+}
+
+.vacancy-detail-form__send a:hover{
+  opacity: 0.7;
+}
+
+.send-vacancy{
+  background-color: white;
+  position: relative;
+  padding: 40px;
+}
+
+.send-vacancy-title{
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 24px;
+}
+
+.send-vacancy-text{
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.send-vacancy__url{
+  width: 100%;
+  padding: 10px 16px 14px;
+  border: 1px solid #97999B;
+}
+
+.send-vacancy__url span{
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.send-vacancy button{
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+.send-vacancy__socials{
+  border-top: 1px solid #D7D7D7;
+  padding-top: 32px;
+}
+
+.send-vacancy__socials__grid{
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.send-vacancy__socials__grid a{
+  width: 48px;
+  height: 48px;
+}
+
+.vacancy__close{
+  right: 40px;
+  top: 44px;
+  position: absolute;
+  z-index: 10;
+  display: block;
+  width: 18px;
+  height: 18px;
+  border: none;
+  font-size: 0;
+  cursor: pointer;
+  outline: none;
+  background: none;
+}
+
+.vacancy__close::after{
+  content: '';
+  width: 24px;
+  height: 2px;
+  display: block;
+  background-color: #212529;
+  transform: rotate(45deg) translateX(-2px) translateY(2px);
+}
+
+.vacancy__close::before{
+  content: '';
+  width: 24px;
+  height: 2px;
+  display: block;
+  background-color: #212529;
+  transform: rotate(135deg) translateX(4px) translateY(1px);
+}
+
+.filename{
+  opacity: 1 !important;
+  height: unset !important;
+  position: relative !important;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #212529;
+  background-color: white;
+  border: 0;
+  font-family: Avenir Next Cyr;
+  font-weight: 400;
+  text-align: center;
+}
+
+.vacancy__list__top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.vacancy__list__top_search_btn{
+  display: none;
+}
+
+.vacancy__filter_top{
+  display: none;
+}
+
+.vacancy-detail__uslovia{
+  display: grid;
+  gap: 16px;
+}
+
+.vacancy-detail-form__politika a{
+  color: #212529;
+  text-decoration: none;
+}
+
+@media (max-width: 769px){
+  .vacancy-detail__top{
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .vacancy-detail__top-title.right{
+    text-align: left;
+    margin: 0;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .vacancy-detail__top_3{
+    grid-row-start: 1;
+  }
+
+  .vacancy__grid{
+    grid-template-columns: 258px 1fr;
+  }
+}
+
+@media (max-width: 550px) {
+  .vacancy{
+    margin: 48px 0;
+  }
+
+  .breadcrums{
+    margin-bottom: 16px;
+  }
+
+  .title-new h2{
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .vacancy__grid{
+    grid-template-columns: 1fr;
+    overflow-x: hidden;
+  }
+
+  .vacancy__list__top{
+    margin-bottom: 24px;
+  }
+
+  .vacancy__list__top_search_btn{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+  }
+
+  .vacancy__list-title{
+    font-size: 16px;
+  }
+
+  .vacancy__item__top{
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .vacancy__item__bottom{
+    gap: 14px;
+  }
+
+  .vacancy__item__name{
+    margin-bottom: 16px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .vacancy__item__arrow{
+    margin: 16px;
+  }
+
+  .vacancy__item{
+    padding: 16px 16px 16px 20px;
+  }
+
+  .vacancy__list__pagination-number{
+    font-size: 14px;
+  }
+
+  .vacancy__list__pagination{
+    margin-top: 32px;
+  }
+
+  .vacancy__list__pagination__wrap{
+    gap: 8px;
+  }
+
+  .vacancy__filter{
+    display: block;
+    opacity: 0;
+    transition: all 0.3s;
+    position: absolute;
+    padding: 0 24px 24px;
+    z-index: -1;
+  }
+
+  .vacancy__filter.active{
+    z-index: 100;
+    display: block;
+    opacity: 1;
+    background: white;
+    width: 100%;
+    z-index: 100;
+    left: 0;
+    box-shadow: 0px 36px 40px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .vacancy__filter_top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 24px;
+  }
+
+  .vacancy__filter_top span{
+    font-weight: 450;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .vacancy__filter_top_btn_close{
+    position: absolute;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .vacancy__filter_top_btn_close::before{
+    content: '';
+    height: 2px;
+    width: 22px;
+    background-color: #000;
+    display: block;
+    transform: rotate(45deg);
+    position: absolute;
+  }
+
+  .vacancy__filter_top_btn_close::after{
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 22px;
+    background-color: #000;
+    display: block;
+    transform: rotate(-45deg);
+  }
+
+  .title-vacancy-detail h2{
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: 4px;
+  }
+
+  .vacancy-detail__top-pre-title{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+
+  .vacancy-detail-requirements-title{
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 12px;
+  }
+
+  .vacancy-detail__top-pre-title.ploxoy{
+    margin-right: 24px;
+  }
+
+  .vacancy-detail__top-pre-title.ploxoy:not(:last-child):before{
+    right: -19px;
+  }
+
+  .vacancy-detail-requirements p{
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .vacancy-detail-responsibilities p{
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .vacancy-detail__uslovia{
+    display: grid;
+    gap: 8px;
+  }
+
+  .vacancy-detail-form-title{
+    font-size: 20px;
+    line-height: 32px;
+    margin-bottom: 12px;
+  }
+
+  .vacancy-detail-form-text{
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .vacancy-detail-form__grid{
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .acancy-detail-form__grid__left{
+    gap: 16px;
+  }
+
+  .detail-form__grid__box textarea{
+    min-height: 312px;
+  }
+
+  .detail-form__grid__box textarea:focus{
+    border: 1px solid #6DCDF6;
+    outline: 0;
+  }
+
+  .detail-form__grid__right{
+    gap: 16px;
+  }
+
+  .detail-form__grid__box label{
+    height: 106px;
+  }
+
+  .vacancy-detail-form__politika label{
+    font-size: 18px;
+    display: grid;
+    grid-template-columns: 24px 1fr;
+  }
+
+  .vacancy-detail-form__send{
+    display: grid;
+    gap: 23px;
+  }
+
+  .vacancy-button{
+    width: 100%;
+  }
+
+  .vacancy-detail-form__send a{
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
